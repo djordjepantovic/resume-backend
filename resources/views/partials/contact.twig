@@ -1,0 +1,55 @@
+<section id="contact" class="section scroll-section">
+  <div data-wow-duration=".7s" class="wow fade-in-up">
+    <div class="container">
+      <h2 class="section-title"><i class="fa fa-send"></i>Contact Me</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card contact-map has-map">
+            <div class="card-content">
+              <ul class="contact-list">
+                <li class="clearfix"><strong>E-mail</strong><span><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></span></li>
+                <li class="clearfix"><strong>Phone</strong><span><a href="tel:{{ profile.phone|replace({' ': ''}) }}">{{ profile.phone }}</a></span></li>
+                <li class="clearfix"><strong>Skype</strong><span>{{ profile.skype }}</span></li>
+                <li class="clearfix"><strong>Address</strong><span>{{ address.street }}, {{ address.city }}, {{ address.country }}</span></li>
+              </ul>
+            </div>
+            <div id="map" data-latitude="{{ address.latitude }}" data-longitude="{{ address.longitude }}"></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card contact-form">
+            <div class="card-content">
+              <h3 class="card-title">Feel free to contact me</h3>
+              <form action="/send" method="post" class="contact-form" novalidate>
+                <div class="input-field">
+                  <input id="name" type="text" name="name" class="validate input-box">
+                  <label for="name">Name</label>
+                </div>
+                <div class="input-field">
+                  <input id="email" type="email" name="email" class="validate input-box">
+                  <label for="email">Email</label>
+                </div>
+                <div class="input-field">
+                  <input id="subject" type="text" name="subject" class="validate input-box">
+                  <label for="subject">Subject</label>
+                </div>
+                <div class="input-field">
+                  <textarea id="message" rows="4" name="message" class="validate materialize-textarea"></textarea>
+                  <label for="message">Message</label>
+                </div>
+                <div class="input-field submit-wrap clearfix">
+                  <button type="submit" class="contact-submit btn-large waves-effect waves-light">Send</button>
+                  <div class="form-loader-area pull-right">
+                    <svg class="circular size-20" height="20" width="20">
+                      <circle class="path" cx="10" cy="10" r="8" fill="none" stroke-width="3" stroke-miterlimit="10" />
+                    </svg>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

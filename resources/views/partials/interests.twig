@@ -1,0 +1,20 @@
+<section id="interests" class="section scroll-section section-interests">
+  <div data-wow-duration=".7s" class="wow fade-in-up">
+    <div class="container">
+      <h2 class="section-title"><i aria-hidden="true" class="fa fa-gamepad"></i>My Interests</h2>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-content">
+              <ul class="interests-list">
+                {% for interest in interests %}
+                <li data-position="bottom" data-tooltip="{{ interest.name }}" class="tooltipped"><i class="{{ interest.icon }}"></i></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

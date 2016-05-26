@@ -1,0 +1,71 @@
+<section id="skills" class="section scroll-section section-skills">
+  <div data-wow-duration=".7s" class="wow fade-in-up">
+    <div class="container">
+      <h2 class="section-title"><i class="fa fa-gears"></i>Skills</h2>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-content tech-tool-skills">
+              <h2 class="card-title">Technical Skills</h2>
+              <div class="row">
+                {% for techSkill in techSkills %}
+                <div class="col-md-6">
+                  <div class="skillbar-wrap">
+                    <div class="bar-data clearfix">
+                      <div class="pull-left lang-name">{{ techSkill.name }}</div>
+                      <div class="pull-right">{{ techSkill.percent }}</div>
+                    </div>
+                    <div data-percent="{{ techSkill.percent }}" class="progress">
+                      <div class="determinate"></div>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div data-wow-duration=".7s" class="wow fade-in-up">
+            <div class="card">
+              <div class="card-content tech-tool-skills">
+                <h2 class="card-title">Tools</h2>
+                <div class="row">
+                  {% for toolSkill in toolSkills %}
+                  <div class="col-md-6">
+                    <div class="skillbar-wrap">
+                      <div class="bar-data clearfix">
+                        <div class="pull-left lang-name">{{ toolSkill.name }}</div>
+                        <div class="pull-right">{{ toolSkill.percent }}</div>
+                      </div>
+                      <div data-percent="{{ toolSkill.percent }}" class="progress">
+                        <div class="determinate"></div>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div data-wow-duration=".7s" class="wow fade-in-up">
+            <div class="card">
+              <div class="card-content">
+                <h2 class="card-title">Languages</h2>
+                <div id="pie-charts" class="row piecharts">
+                  {% for language in languages %}
+                  <div class="col-xs-12 col-sm-4 text-center">
+                    <div data-percent="{{ language.percent }}" data-barcolor="{{ language.barcolor }}" data-trackcolor="{{ language.trackcolor }}" class="pie-chart"><span class="percent"></span></div><span class="skill-name">{{ language.name }}</span>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

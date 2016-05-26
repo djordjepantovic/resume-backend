@@ -1,0 +1,26 @@
+<section id="education" class="section scroll-section">
+  <div data-wow-duration=".7s" class="wow fade-in-up">
+    <div class="container">
+      <h2 class="section-title"><i class="fa fa-graduation-cap"></i>Education</h2>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="timeline">
+            <div class="timeline-bar"></div>
+            <div class="timeline-inner clearfix">
+              {% for education in educations %}
+              <div class="timeline-box"><span class="dot z-depth-1"></span>
+                <div class="card timeline-box-inner"><span class="arrow"></span>
+                  <div class="date">{{ education.duration }}</div>
+                  <h3>{{ education.degree }}</h3>
+                  <h4>{{ education.faculty }}</h4>
+                  <p>{{ education.department }}</p>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+{% extends 'templates/layout.twig' %}
+
+{% block title %}Đorđe Pantović | Junior Web Developer - Personal Resume{% endblock %}
+
+{% block open_graph %}{% include 'partials/open-graph.twig' %}{% endblock %}
+
+{% block content %}
+
+  {% include 'partials/header.twig' %}
+  {% include 'partials/home.twig' %}
+  {% include 'partials/about.twig' %}
+  {% include 'partials/education.twig' %}
+  {% include 'partials/expirience.twig' %}
+  {% include 'partials/skills.twig' %}
+  {% include 'partials/certifications.twig' %}
+  {% include 'partials/funfacts.twig' %}
+  {% include 'partials/interests.twig' %}
+  {% include 'partials/contact.twig' %}
+
+{% endblock %}
+
+{% block footer %}
+  <ul class="social">
+    {% for social in socialList %}
+    <li><a href="{{ social.link }}"><i class="fa {{ social.icon }}"></i></a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+{% block preloader %}
+  <div class="preload-icon"><span></span><span></span></div>
+  <div class="preload-text">Loading ...</div>
+{% endblock %}

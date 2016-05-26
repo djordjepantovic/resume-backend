@@ -1,0 +1,38 @@
+<section id="certifications" class="section scroll-section">
+  <div id="portfolioModal" class="modal white">
+    <div class="modal-img"></div>
+    <div class="modal-footer"><a href="#" class="waves-effect btn-flat brand-text modal-action modal-close">Close</a></div>
+  </div>
+  <div data-wow-duration=".7s" class="wow fade-in-up">
+    <div id="certification-modal" class="container">
+      <h2 class="section-title"><i aria-hidden="true" class="fa fa-check-circle-o"></i>Certifications</h2>
+      {% for cert in certifications %}
+      <div class="card hoverable">
+        <div class="cert-box">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="cert-media">
+                <div class="cert-image waves-effect waves-block waves-light"><a href="#portfolioModal" data-image-source="images/{{ cert.image }}" data-image-alt="{{ cert.alt }}" data-demo-link="#" class="modal-trigger"><img src="images/{{ cert.thumb }}"></a></div>
+                <div class="cert-datetime"><span class="day">{{ cert.day }}</span><span class="month">{{ cert.month }}</span></div>
+              </div>
+            </div>
+            <div class="col-sm-8">
+              <div class="card-content">
+                <div class="cert-data">
+                  <h2 class="card-title">{{ cert.title }}</h2>
+                  <h4>{{ cert.subtitle }}</h4>
+                  <ul>
+                    <li>{{ cert.institution }}</li>
+                    <li>{{ cert.place }}</li>
+                  </ul>
+                  <h3>{{ cert.rank }}</h3><span class="id-num">ID-Nummer: {{ cert.id_number }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

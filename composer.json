@@ -1,0 +1,16 @@
+{
+	"require": {
+		"twig/twig": "~1.24",
+		"mailgun/mailgun-php": "~1.8"
+	},
+
+	"autoload": {
+		"psr-4": {
+			"Resume\\": "app"
+		}
+	},
+
+	"require-dev": {
+		"symfony/var-dumper": "~2.7"
+	}
+}

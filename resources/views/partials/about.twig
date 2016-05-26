@@ -1,0 +1,46 @@
+<section id="about" class="scroll-section">
+  <div data-wow-duration=".7s" class="wow fade-in-up">
+    <div itemscope itemtype="https://schema.org/Person">
+      <div class="container">
+        <div class="row">
+          <div class="clearfix about-inner">
+            <div class="col-sm-12 col-md-4">
+              <div class="person-about">
+                <h3 class="about-subtitle">About me</h3>
+                <p itemprop="description">{{ profile.about_me }}</p><a href="uploads/2016/djordje-pantovic-resume.pdf" target="_blank" class="btn-border btn-large">Download Resume</a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="person-img wow fadeIn"><img itemprop="image" src="images/{{ profile.img }}" alt="Djordje Pantovic" class="img-circle z-depth-1">
+                <meta itemprop="jobTitle" content="Junior Web Developer">
+                <meta itemprop="gender" content="Male">
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="person-info">
+                <h3 class="about-subtitle">Personal Information</h3>
+                <ul class="profile-list">
+                  <li><strong class="title">Age</strong><span class="cont">{{ 'now'|date('Y') - profile.birthdate|date('Y') - 1 }}</span><meta itemprop="birthDate" content="1986-07-11"></li>
+                  <li><strong class="title">Name</strong><span class="cont">{{ profile.first_name }} {{ profile.last_name }}</span><meta itemprop="givenName" content="{{ profile.first_name }}"><meta itemprop="familyName" content="{{ profile.last_name }}"></li>
+                  <li><strong class="title">Phone</strong><span class="cont">{{ profile.phone }}</span></li>
+                  <li><strong class="title">Email</strong><span class="cont" itemprop="email">{{ profile.email }}</span></li>
+                  <li><strong class="title">Address</strong><span class="cont">{{ address.street }}, {{ address.city }}</span></li>
+                  <div itemprop="nationality" itemscope itemtype="http://schema.org/Country">
+                    <meta itemprop="name" content="{{ address.country }}">
+                  </div>
+                </ul>
+              </div>
+              <div class="about-social">
+                <ul class="social">
+                  {% for social in socialList %}
+                  <li><a href="{{ social.link }}"><i class="fa {{ social.icon }}"></i></a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

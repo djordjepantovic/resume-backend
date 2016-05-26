@@ -1,0 +1,15 @@
+<section id="funfacts" class="section scroll-section funfacts">
+  <div data-wow-duration=".7s" class="wow fade-in-up">
+    <div class="container">
+      <div class="row text-center">
+        {% for funfact in funfacts %}
+        <div class="col-sm-3">
+          <div class="funfact-wrap"><i class="fa {{ funfact.icon }}"></i><span class="counter">{{ funfact.counter }}</span>
+            <h4>{{ funfact.title }}</h4>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
